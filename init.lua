@@ -30,6 +30,8 @@ map('n', '<S-Left>', '<cmd>:bp<CR>')
 map('n', '<S-Right>', '<cmd>:bn<CR>')
 
 vim.cmd([[
+set tabstop=2 shiftwidth=2  
+  
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
