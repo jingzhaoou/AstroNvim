@@ -19,3 +19,20 @@ astronvim.conditional_func(astronvim.user_plugin_opts("polish", nil, false))
 if vim.fn.has "nvim-0.8" ~= 1 or vim.version().prerelease then
   vim.schedule(function() astronvim.notify("Unsupported Neovim Version! Please check the requirements", "error") end)
 end
+
+local function map(mode, lhs, rhs, opts)
+  local options = {noremap = true}
+  if opts then options = vim.tbl_extend('force', options, opts) end
+  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+end
+
+map('n', '<S-Left>', '<cmd>:bp<CR>')
+map('n', '<S-Right>', '<cmd>:bn<CR>')
+
+vim.cmd([[
+autocmd BufReadPost *
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \   exe "normal! g`\"" |
+     \ endif
+]])
+
