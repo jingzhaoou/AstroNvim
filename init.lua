@@ -28,6 +28,8 @@ end
 
 map('n', '<S-Left>', '<cmd>:bp<CR>')
 map('n', '<S-Right>', '<cmd>:bn<CR>')
+map('i', '<S-Left>', '<cmd>:bp<CR>')
+map('i', '<S-Right>', '<cmd>:bn<CR>')
 
 vim.cmd([[
 " set tabstop=2 shiftwidth=2
