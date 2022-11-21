@@ -30,7 +30,9 @@ map('n', '<S-Left>', '<cmd>:bp<CR>')
 map('n', '<S-Right>', '<cmd>:bn<CR>')
 
 vim.cmd([[
-set tabstop=2 shiftwidth=2  
+" set tabstop=2 shiftwidth=2
+" autocmd FileType python set shiftwidth=2 tabstop=2 expandtab
+" let g:python_recommended_style = 0
   
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
